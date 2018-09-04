@@ -100,3 +100,4 @@ class Locations(object):
 			self._set_header(self.jsessionid)
 		)
 		return res
+	
