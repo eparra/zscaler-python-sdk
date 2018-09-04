@@ -57,7 +57,7 @@ $ ls examples/
 * **Security Policy Settings**
 * **Activate**
 
-#### Future Release
+#### Future
 
 * _Admin Audit Logs_
 * _User Management_
