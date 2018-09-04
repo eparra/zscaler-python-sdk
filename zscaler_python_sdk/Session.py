@@ -5,7 +5,7 @@ import platform
 import re
 import logging
 
-from .Settings import *
+from .Defaults import *
 
 
 class Session(object):
