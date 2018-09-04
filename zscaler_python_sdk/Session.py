@@ -4,7 +4,6 @@ import time
 import platform
 import re
 import logging
-
 from .Defaults import *
 
 
