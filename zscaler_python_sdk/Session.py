@@ -80,13 +80,17 @@ class Session(object):
 
 		status = response.status_code
 		if status in (301, 302, 303, 307):
-			pass
+			if self.debug:
+				logging.debug("HTTP RESPONSE (Redirection) - Status Code: {}".format(status))
 		elif 200 <= status <= 299:
-			pass
+			if self.debug:
+				logging.debug("HTTP RESPONSE (Success) - Status Code: {}".format(status))
 		elif 401 <= status <= 499:
-			pass
+			if self.debug:
+				logging.debug("HTTP RESPONSE (Client Error) - Status Code: {}".format(status))
 		else:
-			pass
+			if self.debug:
+				logging.debug("HTTP RESPONSE (Unknown ) - Status Code: {}".format(status))
 
 
 	def _perform_get_request(self, uri, header):
