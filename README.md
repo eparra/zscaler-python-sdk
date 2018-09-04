@@ -4,6 +4,8 @@ This is a Python SDK for Zscaler Internet Access.  This client library is design
 
 This SDK has been developed mainly using Python 3.5.x on Mac OSX and Ubuntu 18.04.1 LTS (Bionic Beaver).  
 
+**NOTE:** This repository will experience frequent updates.  To minimize breakage, public method names will not change.  If you run into any defects, please open issues [[HERE.](https://github.com/eparra/zscaler-python-sdk/issues)]   
+
 ## Quick Start 
 
 1) Set Environment Variables.   
