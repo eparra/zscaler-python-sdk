@@ -101,14 +101,16 @@ class Session(object):
 			timeout=REQUEST_TIMEOUTS			
 		)
 
-		parsed = json.loads(res.content)
-		json_response = json.dumps(parsed, sort_keys=True, indent=4, separators=(',', ': ')) if res.content else {}		
+		if res.content:
+			parsed = json.loads(res.content)
+			json_response = json.dumps(parsed, sort_keys=True, indent=4, separators=(',', ': ')) if res.content else {}		
 		
-		if self.debug:
-			logging.debug("GET RESPONSE FROM (URI): {}\nRESPONSE BODY: {}".format(
-				uri,
-				json_response)
-			)	
+			if self.debug:
+				logging.debug("GET RESPONSE FROM (URI): {}\nRESPONSE BODY: {}".format(
+					uri,
+					json_response)
+				)	
+		
 		self._handle_response(res, res.content.decode('utf-8'))
 		return res
 
@@ -128,14 +130,16 @@ class Session(object):
 			timeout=REQUEST_TIMEOUTS			
 		)
 
-		parsed = json.loads(res.content)
-		json_response = json.dumps(parsed, sort_keys=True, indent=4, separators=(',', ': ')) if res.content else {}
+		if res.content:
+			parsed = json.loads(res.content)
+			json_response = json.dumps(parsed, sort_keys=True, indent=4, separators=(',', ': ')) if res.content else {}
 
-		if self.debug:
-			logging.debug("POST RESPONSE FROM (URI): {}\nRESPONSE BODY: {}".format(
-				uri,
-				json_response)
-			)	
+			if self.debug:
+				logging.debug("POST RESPONSE FROM (URI): {}\nRESPONSE BODY: {}".format(
+					uri,
+					json_response)
+				)	
+
 		self._handle_response(res, res.content.decode('utf-8'))
 		return res
 
@@ -147,10 +151,13 @@ class Session(object):
 			headers=header,
 			timeout=REQUEST_TIMEOUTS
 		)	
-		if self.debug:
-			logging.debug("DELETE METHOD (URI): {}, HEADERS: {}".format(
-				uri,
-				header)
-			)	
+
+		if res.content:
+			if self.debug:
+				logging.debug("DELETE METHOD (URI): {}, HEADERS: {}".format(
+					uri,
+					header)
+				)	
+		
 		self._handle_response(res, res.content.decode('utf-8'))
 		return res

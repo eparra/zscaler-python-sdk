@@ -68,7 +68,7 @@ class Auth(object):
 			exit()
 
 
-	def authenticate_api(self):
+	def authenticate_zia_api(self):
 		self._set_obfuscateApiKey(self.zia_api_key)
 		self._get_jsessionid('api')
 

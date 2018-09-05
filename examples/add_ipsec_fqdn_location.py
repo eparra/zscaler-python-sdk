@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import datetime
-import logging
-import os
-import sys
-import time
 import zscaler_python_sdk
 
 
