@@ -13,24 +13,24 @@ def main():
 	z.set_cloud('betacloud')
 	z.authenticate_zia_api()
 
-	# 
+	# Get ZIA blacklist
 	print("\n\n ##########  GET BLACKLIST (BEFORE)  ##########\n\n")
 	z.get_blacklist_urls()
 
-	# 
+	# Python list of URLs to filter
+	print("\n\n ##########  URL LIST TO ADD TO BLACKLIST  ##########\n\n")	
 	url_list = [
 		'umbrella.cisco.com',
 		'.paloaltonetworks.com',
 		'.versa-networks.com'
 	]
-	print("\n\n ##########  URL LIST TO ADD TO BLACKLIST  ##########\n\n")	
 	print (url_list)
 
-	# 
+	# Add URL list to blacklist
 	print("\n\n ##########  ADD URL LIST TO BLACKLIST  ##########\n\n")
 	z.add_blacklist_urls(url_list)
 
-	# Activate change
+	# Activate changes
 	print("\n\n ##########  ACTIVATE CHANGES  ##########\n\n")	
 	z.activate()
 
@@ -38,7 +38,7 @@ def main():
 	print("\n\n ##########  Sleep for 10 seconds  ##########\n\n")	
 	time.sleep(10)
 
-	# 
+	# Get ZIA blacklist a second time to compare
 	print("\n\n ##########  GET BLACKLIST (AFTER)  ##########\n\n")
 	z.get_blacklist_urls()
 
