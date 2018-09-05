@@ -46,9 +46,6 @@ def main():
 	print("\n\n ##########  GET LOCATIONS (AFTER)  ##########\n\n")	
 	z.get_locations()
 
-	# Get Locations (lite output)
-	#z.get_locations_lite()
-
 	# Get VPN Credentials
 	print("\n\n ##########  GET VPN CREDENTIALS  ##########\n\n")	
 	z.get_vpn_credentials()
