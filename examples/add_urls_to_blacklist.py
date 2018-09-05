@@ -35,7 +35,7 @@ def main():
 	z.activate()
 
 	# Sleep for 10 seconds
-	print("\n\n ##########  Sleep for 10 seconds  ##########\n\n")	
+	print("\n\n ##########  Sleep for 10 seconds  ##########")	
 	time.sleep(10)
 
 	# Get ZIA blacklist a second time to compare
