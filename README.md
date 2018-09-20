@@ -8,7 +8,9 @@ This SDK has been developed mainly using Python 3.5.x on Mac OSX and Ubuntu 18.0
 
 ## Quick Start 
 
-1) Set Environment Variables.   
+1) If you have not verified your credentials, we suggest starting [[HERE](https://help.zscaler.com/zia/configuring-postman-rest-api-client)], unless you are already familar with this API.
+
+2) Set Environment Variables   
  
 ```$ <text-editor> ~/.bash_profile 
 export ZIA_USERNAME="<ZIA-ADMIN-USER-ID>"
@@ -20,28 +22,28 @@ export PARTNER_PASSWORD="<ZIA-PARTNER-ADMIN-USER-PASSWORD>"
 export PARTNER_API="<PARTNER-API-KEY>"
 ```
         
-2) Clone Repository (OS must have git installed).
+3) Clone Repository (OS must have git installed)
 
 ```
 $ git clone https://github.com/eparra/zscaler-python-sdk.git
 $ cd zscaler-python-sdk/
 ```
 
-3) Install SDK requirements
+4) Install SDK requirements
 
 ```
 $ pip3 install -r requirements.txt
 ...
 ```
 
-4) Install SDK
+5) Install SDK
 
 ```
 $ python3 setup.py install
 ...
 ```
 
-5) Check out examples
+6) Check out examples
 
 ```
 $ ls examples/
