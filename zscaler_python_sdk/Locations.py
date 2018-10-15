@@ -71,7 +71,7 @@ class Locations(object):
 		if not location_id:
 			return "Location Requried"
 
-		uri = self.api_url + 'api/v1/locations/lite/' + str(location_id)
+		uri = self.api_url + 'api/v1/locations/' + str(location_id)
 
 		res = self._perform_get_request(
 			uri,
@@ -80,12 +80,33 @@ class Locations(object):
 		return res
 
 
-	def update_location_by_id(self, location_id):
-		pass
+	def update_location(self, location):
+
+		if not location:
+			return "Location Requried"
+
+		uri = self.api_url + 'api/v1/locations/' + str(location['id'])
+
+		res = self._perform_put_request(
+			uri,
+			location,
+			self._set_header(self.jsessionid)
+		)
+		return res
 
 
 	def delete_location_by_id(self, location_id):
-		pass
+
+		if not location_id:
+			return "Location Requried"
+
+		uri = self.api_url + 'api/v1/locations/' + str(location_id)
+
+		res = self._perform_delete_request(
+			uri,
+			self._set_header(self.jsessionid)
+		)
+		return res
 
 
 	def get_vpn_endpoints(self, ipv4_addr):
