@@ -78,8 +78,33 @@ class VpnCredentials(object):
 		return res
 
 
-	def update_vpn_credential_by_id(self):
-		pass
+	def update_vpn_credential_by_id(self, vpn_id, fqdn, psk):
+
+		uri = self.api_url + 'api/v1/vpnCredentials/' + str(vpn_id)
+
+		if not fqdn:
+			if self.debug:
+				logging.error("ERROR: {}".format("No FQDN Provided"))
+			return 'No FQDN Provided'
+
+		if psk and self.debug:
+			logging.debug("PREDEFINED PSK: {}".format(psk))
+		elif not psk:
+			psk = self._randomize_psk()
+
+		body = {
+			'type'         : 'UFQDN',
+			'fqdn'         : fqdn,
+			'comments'     : 'Zscaler SDK',
+			'preSharedKey' : psk
+		}
+
+		res = self._perform_put_request(
+			uri,
+			body,
+			self._set_header(self.jsessionid)
+		)
+		return res
 
 
 	def delete_vpn_credential_by_id(self, vpn_id):
