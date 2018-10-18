@@ -144,6 +144,35 @@ class Session(object):
 		return res
 
 
+	def _perform_put_request(self, uri, body, header):
+
+		attempt = json.dumps(body, sort_keys=True, indent=4, separators=(',', ': '))
+		if self.debug:
+			logging.debug("ATTEMPTING PUT (URI): {}\nPUT BODY: {}".format(
+				uri,
+				attempt)
+			)
+		res = self.session.put(
+			uri,
+			json=body,
+			headers=header,
+			timeout=REQUEST_TIMEOUTS
+		)
+
+		if res.content:
+			parsed = json.loads(res.content)
+			json_response = json.dumps(parsed, sort_keys=True, indent=4, separators=(',', ': ')) if res.content else {}
+
+			if self.debug:
+				logging.debug("PUT RESPONSE FROM (URI): {}\nRESPONSE BODY: {}".format(
+					uri,
+					json_response)
+				)
+
+		self._handle_response(res, res.content.decode('utf-8'))
+		return res
+
+
 	def _perform_delete_request(self, uri, header):
 	
 		res = self.session.delete(
