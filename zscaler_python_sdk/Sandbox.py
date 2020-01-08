@@ -7,7 +7,7 @@ class Sandbox(object):
 
 	def get_sanbox_report_md5(self, md5hash):
 
-		uri = self.api_url + '/api/v1/sandbox/report/' + str(md5hash) + '?details=full'
+		uri = self.api_url + 'api/v1/sandbox/report/' + str(md5hash) + '?details=full'
 
 		res = self._perform_get_request(
 			uri,
