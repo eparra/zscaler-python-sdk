@@ -23,6 +23,7 @@ from .User import User
 from .Security import Security
 from .Ssl import Ssl
 from .Activation import Activation
+from .Sandbox import Sandbox
 
 
 logging.basicConfig(level=logging.DEBUG, 
@@ -31,7 +32,7 @@ logging.basicConfig(level=logging.DEBUG,
 	) 
 
 
-class zscaler(Session, Auth, Locations, VpnCredentials, User, Security, Ssl, Activation): 
+class zscaler(Session, Auth, Locations, VpnCredentials, User, Security, Ssl, Activation, Sandbox): 
 
 	def __init__(self):
 
