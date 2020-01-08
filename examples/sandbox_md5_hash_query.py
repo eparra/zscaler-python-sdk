@@ -17,8 +17,12 @@ def main():
 	print("\n\n ##########  Query Known Benign MD5 hash  ##########\n\n")
 	query = z.get_sanbox_report_md5('d732eef37d941722c8b23221bf173161')
 
-	# Query Known Malicious MD5 hash
-	print("\n\n ##########  Query Known Malicious MD5 hash  ##########\n\n")
+	# Query Known Malicious MD5 hash (summary)
+	print("\n\n ##########  Query Known Malicious MD5 hash - summary report  ##########\n\n")
+	query = z.get_sanbox_report_md5_summary('1acd57deafcbc29617a15708f45c31f0')	
+	
+	# Query Known Malicious MD5 hash (full report)
+	print("\n\n ##########  Query Known Malicious MD5 hash - full report  ##########\n\n")
 	query = z.get_sanbox_report_md5('1acd57deafcbc29617a15708f45c31f0')
 
 
