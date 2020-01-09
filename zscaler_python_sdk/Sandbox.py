@@ -2,6 +2,8 @@ import logging
 from .Defaults import *
 
 
+class Sandbox(object):
+
 	def _do_get_sanbox_report_md5(self, md5hash, report_type):
 
 		uri = self.api_url + 'api/v1/sandbox/report/' + str(md5hash)
