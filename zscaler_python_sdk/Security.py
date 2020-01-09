@@ -57,8 +57,4 @@ class Security(object):
 
 	def remove_blacklist_urls(self):
 		pass	
-        
-body = {
-    "url-filter": [
-    ]
-}
+      
