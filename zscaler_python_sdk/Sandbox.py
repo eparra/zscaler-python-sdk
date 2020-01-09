@@ -46,15 +46,6 @@ class Sandbox(object):
 		pass
 
 
-	def is_md5hash_malicious(self, report):
-
-		extrated = (self.extract_values(report, 'Type'))
-		if 'MALICIOUS' in extrated:
-			return True
-		else:
-			return False
-
-
         def is_md5hash_suspicious(self, report):
 
                 extrated = (self.extract_values(report, 'Type'))
@@ -63,3 +54,11 @@ class Sandbox(object):
                 else:
                         return False
 		
+		
+	def is_md5hash_malicious(self, report):
+
+		extrated = (self.extract_values(report, 'Type'))
+		if 'MALICIOUS' in extrated:
+			return True
+		else:
+			return False
