@@ -17,9 +17,9 @@ export ZIA_USERNAME="<ZIA-ADMIN-USER-ID>"
 export ZIA_PASSWORD="<ZIA-ADMIN-USER-PASSWORD>"
 export ZIA_API="<ZIA-API-KEY>" 
 
-export PARTNER_USERNAME="<ZIA-PARTNER-ADMIN-USER-ID>"
-export PARTNER_PASSWORD="<ZIA-PARTNER-ADMIN-USER-PASSWORD>"
-export PARTNER_API="<PARTNER-API-KEY>"
+export ZIA_PARTNER_USERNAME="<ZIA-PARTNER-ADMIN-USER-ID>"
+export ZIA_PARTNER_PASSWORD="<ZIA-PARTNER-ADMIN-USER-PASSWORD>"
+export ZIA_PARTNER_API="<PARTNER-API-KEY>"
 ```
         
 3) Clone Repository (OS must have git installed)
@@ -51,21 +51,6 @@ $ ls examples/
 ```
 
 ## API Support
-
-### ZIA API
-
-#### Supported
-
-* **Security Policy Settings**
-* **Activate**
-
-#### Future
-
-* _Admin Audit Logs_
-* _User Management_
-* _SSL Inspection Settings_
-* _URL Categories_
-* _Sandbox Report_
 
 ### SD-WAN (Partner) API
 
