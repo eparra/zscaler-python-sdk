@@ -1,3 +1,4 @@
+
 import logging
 from .Defaults import *
 
@@ -46,13 +47,13 @@ class Sandbox(object):
 		pass
 
 
-        def is_md5hash_suspicious(self, report):
+		def is_md5hash_suspicious(self, report):
 
-                extrated = (self.extract_values(report, 'Type'))
-                if 'SUSPICIOUS' in extrated:
-                        return True
-                else:
-                        return False
+				extrated = (self.extract_values(report, 'Type'))
+				if 'SUSPICIOUS' in extrated:
+						return True
+				else:
+						return False
 		
 		
 	def is_md5hash_malicious(self, report):
