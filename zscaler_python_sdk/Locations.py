@@ -26,7 +26,7 @@ class Locations(object):
 		return res
 
 
-	def create_location(self, location_name, vpn_cred_id, fqdn):
+	def create_location(self, location_name, vpn_cred_id, fqdn, gateway_options = None):
 
 		uri = self.api_url + 'api/v1/locations'
 
@@ -46,6 +46,41 @@ class Locations(object):
 				}
 			]
 		}
+
+		if gateway_options:
+			body = {**body, **gateway_options}
+
+		res = self._perform_post_request(
+			uri,
+			body,
+			self._set_header(self.jsessionid)
+		)
+		return res
+
+
+	def create_sub_location(self, parent_id, location_name, ip_addresses, gateway_options = None):
+
+		uri = self.api_url + 'api/v1/locations'
+
+		if not parent_id:
+			return 'Location Parent ID Required'
+
+		if not location_name:
+			return 'Location Name Required'
+
+		if not ip_addresses:
+			return 'IP Addresses Required'			
+
+		body = {
+			"name": location_name,
+			"parentId": parent_id,			
+			"ipAddresses": [
+				ip_addresses
+			],
+		}
+
+		if gateway_options:
+			body = {**body, **gateway_options}
 
 		res = self._perform_post_request(
 			uri,
@@ -100,4 +135,3 @@ class Locations(object):
 			self._set_header(self.jsessionid)
 		)
 		return res
-	
