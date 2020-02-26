@@ -27,9 +27,9 @@ class VpnCredentials(object):
 		return data['id']
 
 
-	def get_vpn_credentials(self):
+	def get_vpn_credentials(self, page_size=1000, page_count=1):
 
-		uri = self.api_url + 'api/v1/vpnCredentials'
+		uri = self.api_url + f'api/v1/vpnCredentials?pageSize={page_size}&page={page_count}'
 
 		res = self._perform_get_request(
 			uri,
@@ -109,7 +109,7 @@ class VpnCredentials(object):
 
 	def delete_vpn_credential_by_id(self, vpn_id):
 
-		uri = self.api_url + 'api/v1/vpnCredentials/' + vpn_id
+		uri = self.api_url + 'api/v1/vpnCredentials/' + str(vpn_id)
 
 		res = self._perform_delete_request(
 			uri,
