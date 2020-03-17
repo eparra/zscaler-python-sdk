@@ -58,6 +58,25 @@ $ ls examples/
 * **Locations**
 * **Activate**
 
+### FAQs
+
+**Create Location:**
+
+* Can we create location without **name** & **VPN credentials**? - **No**
+* Can we create sub-location without **name**, **parentId** & **Ip Addresses**? - No
+* Can we create sub-location with **port** & **VPN credentials**? - **No we can't create both**
+* Can we create location & sub-location with **same name**? - **Yes**
+
+**Delete Location:**
+
+* Can we **delete parent location** without deleting its sub-location? - **Yes, and its all sub-locations will get deleted**
+* Can we **delete sub-location** without deleting the parent location? - **Yes**
+* Can we **delete others** sub-location? - **No, it automatically gets deleted, if all the sub-locations are deleted**
+* Can we **update others** sub-location? - **Yes**
+* Can we pass multiple ip address to sub-location ipAddress list? -
+* Can we **delete VPN credentials** if any of the associated location is present? - **No, need to delete all associated locations**
+
+
 
 ## Licensing
 

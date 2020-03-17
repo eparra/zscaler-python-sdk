@@ -21,7 +21,7 @@ class VpnCredentials(object):
 
 	def extract_vpn_credential_id(self, json_response):
 
-		data = json.loads(json_response)
+		data = json_response
 		if self.debug:
 			logging.debug("Extract VPN ID: {}".format(data['id']))
 		return data['id']
@@ -30,6 +30,18 @@ class VpnCredentials(object):
 	def get_vpn_credentials(self, page_size=1000, page_count=1):
 
 		uri = self.api_url + f'api/v1/vpnCredentials?pageSize={page_size}&page={page_count}'
+
+		res = self._perform_get_request(
+			uri,
+			self._set_header(self.jsessionid)
+		)
+		return res
+
+
+	def get_unassociated_vpn_credentials(self, page_size=1000, page_count=1):
+
+		uri = self.api_url + \
+			  f'api/v1/vpnCredentials?includeOnlyWithoutLocation=true&pageSize={page_size}&page={page_count}'
 
 		res = self._perform_get_request(
 			uri,

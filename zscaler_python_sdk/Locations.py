@@ -9,7 +9,7 @@ class Locations(object):
 
 	def extract_location_id(self, json_response):
 
-		data = json.loads(json_response)
+		data = json_response
 		if self.debug:
 			logging.debug("Extract Location ID: {}".format(data['id']))
 		return data['id']
@@ -110,26 +110,25 @@ class Locations(object):
 
 	def create_location_by_payload(self, z_loc_payload, is_sub_loc=False):
 		"""
-        Create location or sub-location by passing the correct payload.
-        Use this method to pass constructed zscaler location payload.
+		Create location or sub-location by passing the correct payload.
+		Use this method to pass constructed zscaler location payload.
 
-        * To create zscaler location, these fields are mandatory:
+		* To create zscaler location, these fields are mandatory:
+			* name
+			* vpnCredentials = [{},{}...]
 
-          * name
-          * vpnCredentials = [{},{}...]
+		* To create zscaler sub-location, these fields are mandatory:
+			* parentId
+			* name
+			* ipAddresses
+			* vpnCredentials = must be none or empty
 
-        * To create zscaler sub-location, these fields are mandatory:
+		For other non-mandatory fields, see - https://help.zscaler.com/zia/api#/Locations/addLocation
 
-          * parentId
-          * name
-          * ipAddresses
-          * vpnCredentials = must be none or empty
+		:param z_loc_payload: zscaler location payload
+		:param is_sub_loc: To create zscaler sub-location pass it True
+		"""
 
-        For other non-mandatory fields, see - https://help.zscaler.com/zia/api#/Locations/addLocation
-
-        :param z_loc_payload: zscaler location payload
-        :param is_sub_loc: To create zscaler sub-location pass it True
-        """
 		if not (z_loc_payload and isinstance(z_loc_payload, dict)):
 			return 'Location Payload Required'
 
@@ -175,9 +174,9 @@ class Locations(object):
 	def get_locations_by_id(self, location_id):
 
 		if not location_id:
-			return "Location Required"
+			return 'Location ID Required'
 
-		uri = self.api_url + 'api/v1/locations/lite/' + str(location_id)
+		uri = self.api_url + 'api/v1/locations/' + str(location_id)
 
 		res = self._perform_get_request(
 			uri,
@@ -190,8 +189,33 @@ class Locations(object):
 		pass
 
 
+	def update_location(self, location):
+
+		if not location:
+			return 'Location Required'
+
+		uri = self.api_url + 'api/v1/locations/' + str(location['id'])
+
+		res = self._perform_put_request(
+			uri,
+			location,
+			self._set_header(self.jsessionid)
+		)
+		return res
+
+
 	def delete_location_by_id(self, location_id):
-		pass
+
+		if not location_id:
+			return 'Location Required'
+
+		uri = self.api_url + 'api/v1/locations/' + str(location_id)
+
+		res = self._perform_delete_request(
+			uri,
+			self._set_header(self.jsessionid)
+		)
+		return res
 
 
 	def get_vpn_endpoints(self, ipv4_addr):
