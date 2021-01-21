@@ -19,7 +19,7 @@ export ZIA_API="<ZIA-API-KEY>"
 
 export ZIA_PARTNER_USERNAME="<ZIA-PARTNER-ADMIN-USER-ID>"
 export ZIA_PARTNER_PASSWORD="<ZIA-PARTNER-ADMIN-USER-PASSWORD>"
-export ZIA_PARTNER_API="<PARTNER-API-KEY>"
+export ZIA_PARTNER_API="<ZIA-PARTNER-API-KEY>"
 ```
         
 3) Clone Repository (OS must have git installed)
