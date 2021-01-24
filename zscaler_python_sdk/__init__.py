@@ -25,9 +25,9 @@ from .Sandbox import Sandbox
 from .Session import Session
 from .Security import Security
 from .Ssl import Ssl
-from .User import User
 from .UrlCategories import UrlCategories
 from .UrlPolicies import UrlPolicies
+from .User import User
 from .VpnCredentials import VpnCredentials
 
 
@@ -38,7 +38,7 @@ logging.basicConfig(
 	) 
 
 
-class zscaler(Activation, Auth, Datacenters, Gre, Helpers, Locations, Sandbox, Session, Security, Ssl, User, UrlCategories, UrlPolicies, VpnCredentials):
+class zscaler(Activation, Auth, Datacenters, Gre, Helpers, Locations, Sandbox, Session, Security, Ssl, UrlCategories, UrlPolicies, User, VpnCredentials):
 
 
 	def __init__(self):
