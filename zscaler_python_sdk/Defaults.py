@@ -6,10 +6,11 @@ MAX_PSK_LEN      = 64
 REQUEST_TIMEOUTS = (5, 25)
 
 Z_CLOUDS = {
-	'zscaler'      : 'https://admin.zscaler.net/',
-	'zscloud'      : 'https://admin.zscloud.net/',
-	'zscalerone'   : 'https://admin.zscalerone.net/',
-	'zscalertwo'   : 'https://admin.zscalertwo.net/',
-	'zscalerthree' : 'https://admin.zscalerthree.net/',
-	'betacloud'    : 'https://admin.zscalerbeta.net/'	
+	'zscaler'      : 'https://zsapi.zscaler.net/',
+	'zscloud'      : 'https://zsapi.zscloud.net/',
+	'zscalerone'   : 'https://zsapi.zscalerone.net/',
+	'zscalertwo'   : 'https://zsapi.zscalertwo.net/',
+	'zscalerthree' : 'https://zsapi.zscalerthree.net/',
+	'betacloud'    : 'https://zsapi.zscalerbeta.net/',	
+	'govcloud'     : 'https://admin.zscalergov.net/'
 }
