@@ -34,6 +34,9 @@ class Auth(object):
 		# ZIA API Key should be stored as an environmental variable named "ZIA_API"
 		if os.environ.get('ZIA_API') is not None:
 			self.zia_api_key  = os.environ.get('ZIA_API')
+			if len(self.zia_api_key) < MIN_API_KEY_LENGTH:
+				logging.debug("ZIA API Key must be %{} characters".format(MIN_API_KEY_LENGTH)))
+				exit()
 		else:
 			logging.debug("ENV IMPORT ERROR: {}".format("ZIA_API not found"))
 			exit()
@@ -63,6 +66,9 @@ class Auth(object):
 		# Partner API Key should be stored as an environmental variable named "PARTNER_API"
 		if os.environ.get('ZIA_PARTNER_API') is not None:
 			self.partner_api_key  = os.environ.get('ZIA_PARTNER_API')
+			if len(self.partner_api_key) < MIN_API_KEY_LENGTH:
+				logging.debug("Partner API Key must be %{} characters".format(MIN_API_KEY_LENGTH)))
+				exit()
 		else:
 			logging.debug("ENV IMPORT ERROR: %{}".format("ZIA_PARTNER_API not found"))
 			exit()
