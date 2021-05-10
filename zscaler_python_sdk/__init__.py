@@ -5,7 +5,7 @@ import logging
 import time
 
 
-__version_tuple__ = (0,0,5)
+__version_tuple__ = (0,0,6)
 __version__       = '.'.join(map(str, __version_tuple__))
 __email__         = 'NO EMAIL'
 __author__        = "Eddie Parra <{0}>".format(__email__)
