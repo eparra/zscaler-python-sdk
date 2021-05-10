@@ -35,7 +35,7 @@ class Auth(object):
 		if os.environ.get('ZIA_API') is not None:
 			self.zia_api_key  = os.environ.get('ZIA_API')
 			if len(self.zia_api_key) < MIN_API_KEY_LENGTH:
-				logging.debug("ZIA API Key must be %{} characters".format(MIN_API_KEY_LENGTH)))
+				logging.debug("ZIA API Key must be %{} characters".format(MIN_API_KEY_LENGTH))
 				exit()
 		else:
 			logging.debug("ENV IMPORT ERROR: {}".format("ZIA_API not found"))
