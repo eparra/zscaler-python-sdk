@@ -7,7 +7,9 @@ class Security(object):
 
 	def get_whitelist_urls(self):
 
-		uri = self.api_url + 'api/v1/security'
+		uri = '{}api/v1/security'.format(
+			self.api_url
+			)
 
 		res = self._perform_get_request(
 			uri,
@@ -22,7 +24,9 @@ class Security(object):
 
 	def get_blacklist_urls(self):
 
-		uri = self.api_url + 'api/v1/security/advanced'
+		uri = '{}api/v1/security/advanced'.format(
+			self.api_url
+			)
 
 		res = self._perform_get_request(
 			uri,
