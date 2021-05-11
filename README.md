@@ -1,6 +1,6 @@
 # Zscaler Python SDK 
 
-This is a Python SDK for Zscaler Internet Access.  This client library is designed to support the Zscaler Internet Access (ZIA) [API](https://help.zscaler.com/zia/about-api) and [SD-WAN API](https://help.zscaler.com/zia/sd-wan-api-integration) (aka "Partner API").  All API referecnes can be found here [[LINK](https://help.zscaler.com/zia/api)].  **PLEASE READ THE DOCUMENTATION BEFORE CONTACTING ZSCALER**
+This is a Python SDK for Zscaler Internet Access (ZIA).  This client library is designed to support the ZIA [API](https://help.zscaler.com/zia/about-api) and ZIA [Partner API](https://help.zscaler.com/zia/sd-wan-api-integration) (aka "SD-WAN" API) in ZIA 6.1 or newer.  All API referecnes can be found here [[LINK](https://help.zscaler.com/zia/api)].  **PLEASE READ THE DOCUMENTATION BEFORE CONTACTING ZSCALER**
 
 This SDK has been developed mainly using Python 3.8.2 on macOS (10.15.7) and Ubuntu 18.04.1 LTS (Bionic Beaver).  
 
