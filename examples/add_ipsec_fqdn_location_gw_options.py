@@ -17,8 +17,8 @@ gateway_options = {
 
 def main():
 
-	fqdn = 'test@example.com'
-	location_description = "Test driving the new Python SDK"
+	fqdn          = 'test@example.com'
+	location_name = 'sjc_sdwan_1 (San Jose, CA)'
 
 	print("\n\n ##########  STARTING SDK ##########\n\n")
 	z = zscaler_python_sdk.zscaler()
@@ -36,11 +36,11 @@ def main():
 
 	# Extract ID from the prior response. 
 	print("\n\n ##########  EXTRACT VPN CREDENTIAL ID  ##########\n\n")		
-	vpn_id = z.extract_vpn_credential_id(res.content)
+	vpn_id = z.extract_id_from_response(res.content)
 
 	# Pass location name, VPN credential id, and FQDN
 	print("\n\n ##########  CREATE LOCATION  ##########\n\n")	
-	res = z.create_location(
+	res = z.create_location_with_vpn_credential(
 		location_description,
 		vpn_id,
 		fqdn,

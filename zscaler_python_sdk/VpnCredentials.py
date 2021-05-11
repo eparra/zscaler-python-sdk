@@ -19,13 +19,6 @@ class VpnCredentials(object):
 		return psk	
 
 
-	def extract_vpn_credential_id(self, json_response):
-
-		data = json.loads(json_response)
-		if self.debug:
-			logging.debug("Extract VPN ID: {}".format(data['id']))
-		return data['id']
-
 
 	def get_vpn_credentials(self):
 

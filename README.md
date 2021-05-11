@@ -2,7 +2,7 @@
 
 This is a Python SDK for Zscaler Internet Access.  This client library is designed to support the Zscaler Internet Access (ZIA) [API](https://help.zscaler.com/zia/about-api) and [SD-WAN API](https://help.zscaler.com/zia/sd-wan-api-integration) (aka "Partner API").  All API referecnes can be found here [[LINK](https://help.zscaler.com/zia/api)].  **PLEASE READ THE DOCUMENTATION BEFORE CONTACTING ZSCALER**
 
-This SDK has been developed mainly using Python 3.5.x on Mac OSX and Ubuntu 18.04.1 LTS (Bionic Beaver).  
+This SDK has been developed mainly using Python 3.8.2 on macOS (10.15.7) and Ubuntu 18.04.1 LTS (Bionic Beaver).  
 
 **NOTE:** This repository will experience frequent updates.  To minimize breakage, public method names will not change.  If you run into any defects, please open issues [[HERE.](https://github.com/eparra/zscaler-python-sdk/issues)]   
 
@@ -21,29 +21,37 @@ export ZIA_PARTNER_USERNAME="<ZIA-PARTNER-ADMIN-USER-ID>"
 export ZIA_PARTNER_PASSWORD="<ZIA-PARTNER-ADMIN-USER-PASSWORD>"
 export ZIA_PARTNER_API="<ZIA-PARTNER-API-KEY>"
 ```
+
+3) Setup Virtual Environment (optional)
+
+```
+python3 -m venv zscaler-sdk
+cd zscaler-sdk 
+source bin/activate
+```
         
-3) Clone Repository (OS must have git installed)
+4) Clone Repository (OS must have git installed)
 
 ```
 $ git clone https://github.com/eparra/zscaler-python-sdk.git
 $ cd zscaler-python-sdk/
 ```
 
-4) Install SDK requirements
+5) Install SDK requirements
 
 ```
 $ pip3 install -r requirements.txt
 ...
 ```
 
-5) Install SDK
+6) Install SDK
 
 ```
 $ python3 setup.py install
 ...
 ```
 
-6) Check out examples
+7) Check out examples
 
 ```
 $ ls examples/
@@ -54,9 +62,10 @@ $ ls examples/
 
 ### SD-WAN (Partner) API
 
-* **VPN Credentials**
 * **Locations**
-* **Activate**
+* **VPN Credentials**
+* **Static IP**
+* **GRE Tunnels**
 
 
 ## Licensing
@@ -72,3 +81,7 @@ If you have bugs or other issues specifically pertaining to this library, file t
 * https://help.zscaler.com/zia/api
 * https://help.zscaler.com/zia/zscaler-api-developer-guide
 * https://help.zscaler.com/zia/sd-wan-api-integration
+
+## References
+
+Thanks to [Sofian Halim](https://www.linkedin.com/in/sofian-halim-9237b25/) and [Lidor Pergament](https://www.linkedin.com/in/lidorp/).

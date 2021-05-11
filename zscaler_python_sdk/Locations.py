@@ -26,9 +26,10 @@ class Locations(object):
 		return res
 
 
-	def create_location(self, location_name, vpn_cred_id, fqdn, gateway_options = None):
+	def create_location_with_vpn_credential(self, location_name, vpn_cred_id, fqdn, gateway_options = None):
 
-		uri = self.api_url + 'api/v1/locations'
+		if not location_name:
+			return 'Location Name Required'
 
 		if not vpn_cred_id:
 			return 'VPN Credential ID Required'
@@ -46,6 +47,27 @@ class Locations(object):
 				}
 			]
 		}
+		return self._create_location_with_ip_address(body, gateway_options)
+
+
+	def create_location_with_ip_address(self, location_name, ip_address, gateway_options = None):
+
+		if not location_name:
+			return 'Location Name Required'
+
+		if not ip_address:
+			return 'Static IP ID Required'
+
+		body = {
+			"name": location_name,
+			"ipAddresses" :  [ ip_address ]
+		}
+		return self._create_location_with_ip_address(body, gateway_options)
+
+
+	def _create_location_with_ip_address(self, body, gateway_options = None):
+
+		uri = self.api_url + 'api/v1/locations'
 
 		if gateway_options:
 			body = {**body, **gateway_options}
