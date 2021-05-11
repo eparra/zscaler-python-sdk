@@ -21,29 +21,37 @@ export ZIA_PARTNER_USERNAME="<ZIA-PARTNER-ADMIN-USER-ID>"
 export ZIA_PARTNER_PASSWORD="<ZIA-PARTNER-ADMIN-USER-PASSWORD>"
 export ZIA_PARTNER_API="<ZIA-PARTNER-API-KEY>"
 ```
+
+3) Setup Virtual Environment (optional)
+
+```
+python3 -m venv zscaler-sdk
+cd zscaler-sdk 
+source bin/activate
+```
         
-3) Clone Repository (OS must have git installed)
+4) Clone Repository (OS must have git installed)
 
 ```
 $ git clone https://github.com/eparra/zscaler-python-sdk.git
 $ cd zscaler-python-sdk/
 ```
 
-4) Install SDK requirements
+5) Install SDK requirements
 
 ```
 $ pip3 install -r requirements.txt
 ...
 ```
 
-5) Install SDK
+6) Install SDK
 
 ```
 $ python3 setup.py install
 ...
 ```
 
-6) Check out examples
+7) Check out examples
 
 ```
 $ ls examples/
@@ -54,9 +62,10 @@ $ ls examples/
 
 ### SD-WAN (Partner) API
 
-* **VPN Credentials**
 * **Locations**
-* **Activate**
+* **VPN Credentials**
+* **Static IP**
+* **GRE Tunnels**
 
 
 ## Licensing
@@ -72,3 +81,7 @@ If you have bugs or other issues specifically pertaining to this library, file t
 * https://help.zscaler.com/zia/api
 * https://help.zscaler.com/zia/zscaler-api-developer-guide
 * https://help.zscaler.com/zia/sd-wan-api-integration
+
+## References
+
+Thanks to [Sofian Halim](https://www.linkedin.com/in/sofian-halim-9237b25/) and [Lidor Pergament](https://www.linkedin.com/in/lidorp/).
