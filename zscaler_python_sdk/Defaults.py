@@ -11,7 +11,9 @@ Z_CLOUDS = {
 	'zscloud'      : 'https://zsapi.zscloud.net/',
 	'zscalerone'   : 'https://zsapi.zscalerone.net/',
 	'zscalertwo'   : 'https://zsapi.zscalertwo.net/',
-	'zscalerthree' : 'https://zsapi.zscalerthree.net/',
-	'betacloud'    : 'https://zsapi.zscalerbeta.net/',	
-	'govcloud'     : 'https://admin.zscalergov.net/'
+	'zscalerthree' : 'https://zsapi.zscalerthree.net/',	
+	'govcloud'     : 'https://admin.zscalergov.net/',
+	'betacloud'    : 'https://zsapi.zscalerbeta.net/',
+	'zsdevel'      : 'https://zsapi.zsdevel.net/',	
+	'zspreview'    : 'https://zsapi.zspreview.net/'	
 }
