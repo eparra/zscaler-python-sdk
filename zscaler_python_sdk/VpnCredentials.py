@@ -10,7 +10,7 @@ class VpnCredentials(object):
 
 	def _randomize_psk(self):
 		
-		psk = ''.join(random.choices(string.ascii_letters + string.digits, k=MAX_PSK_LEN))
+		psk = ''.join(random.choices(string.ascii_letters + string.digits, k=MAX_PSK_LENGTH))
 		if self.debug:
 			logging.debug("RANDOM PSK: {} (PSK Length: {})".format(
 				psk,
