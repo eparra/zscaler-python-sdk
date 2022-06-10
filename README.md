@@ -1,6 +1,6 @@
 # Zscaler Python SDK 
 
-This is a Python SDK for Zscaler Internet Access (ZIA).  This client library is designed to support the ZIA [API](https://help.zscaler.com/zia/about-api) and ZIA [Partner API](https://help.zscaler.com/zia/sd-wan-api-integration) (aka "SD-WAN" API) in ZIA 6.1 or newer.  All API referecnes can be found here [[LINK](https://help.zscaler.com/zia/api)].  **PLEASE READ THE DOCUMENTATION BEFORE CONTACTING ZSCALER**
+This is a Python SDK for Zscaler Internet Access (ZIA).  This client library is designed to support the ZIA [API](https://help.zscaler.com/zia/zia-api) and ZIA [Partner API](https://help.zscaler.com/zia/sd-wan-api-integration) (aka "SD-WAN" API) in ZIA 6.1 or newer.  All ZIA API references can be found here [[LINK](https://help.zscaler.com/zia/zia-api)].  **PLEASE READ THE DOCUMENTATION BEFORE CONTACTING ZSCALER**
 
 This SDK has been developed mainly using Python 3.8.2 on macOS (10.15.7) and Ubuntu 18.04.1 LTS (Bionic Beaver).  
 
@@ -12,7 +12,8 @@ This SDK has been developed mainly using Python 3.8.2 on macOS (10.15.7) and Ubu
 
 2) Set Environment Variables   
  
-```$ <text-editor> ~/.bash_profile 
+```
+$ <text-editor> ~/.bash_profile 
 export ZIA_USERNAME="<ZIA-ADMIN-USER-ID>"
 export ZIA_PASSWORD="<ZIA-ADMIN-USER-PASSWORD>"
 export ZIA_API="<ZIA-API-KEY>" 
@@ -78,8 +79,8 @@ If you have bugs or other issues specifically pertaining to this library, file t
 
 ## References
 
-* https://help.zscaler.com/zia/api
-* https://help.zscaler.com/zia/zscaler-api-developer-guide
+* https://help.zscaler.com/zia/zia-api
+* https://help.zscaler.com/zia/zia-api/api-developer-reference-guide
 * https://help.zscaler.com/zia/sd-wan-api-integration
 
 ## References
