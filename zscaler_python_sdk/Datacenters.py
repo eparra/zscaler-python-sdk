@@ -8,7 +8,7 @@ class Datacenters(object):
     
 	def get_all_vips(self):
 
-		uri = self.api_url + 'api/v1/vips?include=all'
+		uri = self.api_url + 'api/v1/vips?pageSize=1000&include=all'
 
 		res = self._perform_get_request(
 			uri,
@@ -19,7 +19,7 @@ class Datacenters(object):
         
 	def get_all_public_vips(self):
 
-		uri = self.api_url + 'api/v1/vips?include=public'
+		uri = self.api_url + 'api/v1/vips?pageSize=1000&include=public'
 
 		res = self._perform_get_request(
 			uri,
@@ -30,7 +30,7 @@ class Datacenters(object):
         
 	def get_all_private_vips(self):
 
-		uri = self.api_url + 'api/v1/vips?include=private'
+		uri = self.api_url + 'api/v1/vips?pageSize=1000&include=private'
 
 		res = self._perform_get_request(
 			uri,

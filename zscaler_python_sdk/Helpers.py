@@ -38,3 +38,28 @@ class Helpers(object):
         except:
             logging.debug("Unable To Extract ID - EXITING\n\n")        
             exit()
+
+
+    def extract_gre_vip_id_from_response(self, vip_priority, vips_data):
+        
+        try:
+            data = json.loads(vips_data)
+            if vip_priority == 'primary':
+                vip_id = data[0]['greVips'][0]['id']
+                if self.debug:
+                    json_response = json.dumps(data[0], indent=4, separators=(',', ': '))
+                    logging.debug("Extracted primary GRE VIP ID {}\nFrom Data Center:\n{}".format(
+                        vip_id,
+                        json_response)
+                    )
+            if vip_priority == 'secondary':
+                vip_id = data[1]['greVips'][0]['id']
+                if self.debug:
+                    json_response = json.dumps(data[1], indent=4, separators=(',', ': '))
+                    logging.debug("Extracted secondary GRE VIP ID {}\nFrom Data Center:\n{}".format(
+                        vip_id,
+                        json_response)
+                    )
+            return vip_id
+        except:
+            logging.debug("Unable To Extract GRE VIP ID - EXITING\n\n") 

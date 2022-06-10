@@ -89,10 +89,10 @@ class Gre(object):
         body = {
             'sourceIp'         : sourceIp,
             'primaryDestVip'   : {
-                "id" : "4681"
+                "id" : primaryVip
             },
             'secondaryDestVip' : {
-                "id" : "30157"          
+                "id" : secondaryVip          
             },   
             'comment'       : comment,
             'ipUnnumbered'  : ipUnnumbered,
@@ -109,7 +109,7 @@ class Gre(object):
 
     def get_gre_vips(self, source_ip):
 
-        uri = '{}api/v1/vips/recommendedList?sourceIp={}'.format(
+        uri = '{}api/v1/vips/groupByDatacenter?sourceIp={}'.format(
             self.api_url,
             source_ip
             )

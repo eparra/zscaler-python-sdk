@@ -8,8 +8,6 @@ def main():
 	static_ipv4       = 'X.X.X.X'  # Your public static IP address 
 	latitude          = '47.608013'
 	longitude         = '-122.335167'
-	primary_gre_vip   = '199.168.148.131'  # BetaCloud - Bay Area, CA 
-	secondary_gre_vip = '104.129.194.46'   # BetaCloud - Washington, D.C.
 	location_name     = 'sjc_sdwan_1 (San Jose, CA)'
 
 
@@ -32,16 +30,28 @@ def main():
 	print("\n\n ##########  EXTRACT STATIC IP ID  ##########\n\n")		
 	static_id = z.extract_id_from_response(res.content)
 
-	# Get VIPs by Source IP
+	# Get closest DC VIPs by Source IP
 	print("\n\n ##########  GET GRE VIPS BY SOURCE IP  ##########\n\n")	
-	z.get_gre_vips(static_ipv4)
+	res = z.get_gre_vips(static_ipv4)
 
+	# Extract Primary and Secondary VIPs
+	print("\n\n ##########  EXTRACTING PRIMARY VIP ID  ##########\n\n")
+	primary_gre_vip_id = z.extract_gre_vip_id_from_response(
+    	'primary',
+     	res.content
+    )
+	print("\n\n ##########  EXTRACTING SECONDARY VIP ID  ##########\n\n")
+	secondary_gre_vip_id = z.extract_gre_vip_id_from_response(
+     	'secondary',
+      	res.content
+    )
+ 
 	# Create GRE tunnel
 	print("\n\n ##########  CREATE GRE TUNNEL ##########\n\n")
 	res = z.create_gre_tunnel(
 		static_ipv4,
-		primary_gre_vip,
-		secondary_gre_vip
+		primary_gre_vip_id,
+		secondary_gre_vip_id
 	)
 
 	# Extract GRE Tunnel ID. 
