@@ -89,10 +89,10 @@ class Gre(object):
         body = {
             'sourceIp'         : sourceIp,
             'primaryDestVip'   : {
-                "id" : "4681"
+                "id" : primaryVip
             },
             'secondaryDestVip' : {
-                "id" : "30157"          
+                "id" : secondaryVip          
             },   
             'comment'       : comment,
             'ipUnnumbered'  : ipUnnumbered,
