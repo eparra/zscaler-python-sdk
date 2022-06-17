@@ -139,7 +139,7 @@ class Gre(object):
                 )
         
         else:
-            uri = '{}api/v1/vips/group:ByDatacenter?sourceIp={}'.format(
+            uri = '{}api/v1/vips/groupByDatacenter?sourceIp={}'.format(
                 self.api_url,
                 source_ip
                 )
