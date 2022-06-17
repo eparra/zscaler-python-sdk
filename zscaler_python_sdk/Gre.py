@@ -34,9 +34,9 @@ class Gre(object):
         
     def create_static_ip(self, static_ip, **data):
         
-        latitude = data.get(latitude)
-        longitude = data.get(longitude)
-        geoOverride = data.get(geoOverride)
+        latitude = data.get('latitude')
+        longitude = data.get('longitude')
+        geoOverride = data.get('geoOverride')
         
         uri = self.api_url + 'api/v1/staticIP'
     
@@ -121,8 +121,8 @@ class Gre(object):
 
     def get_gre_vips(self, source_ip, **data):
 
-        latitude = data.get(latitude)
-        longitude = data.get(longitude)
+        latitude = data.get('latitude')
+        longitude = data.get('longitude')
 
         if (latitude or longitude) and not (latitude and longitude):
             if self.debug:
