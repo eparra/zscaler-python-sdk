@@ -23,9 +23,9 @@ def main():
 	print("\n\n ##########  CREATE STATIC IP ##########\n\n")
 	res = z.create_static_ip(
 		static_ipv4,
-		latitude, 
-		longitude,
-  		geoOverride
+		latitude=latitude, 
+		longitude=longitude,
+  		geoOverride=geoOverride
 	)
 
 	# Extract Static IP ID. 
@@ -36,8 +36,8 @@ def main():
 	print("\n\n ##########  GET GRE VIPS BY SOURCE IP  ##########\n\n")	
 	res = z.get_gre_vips(
     	static_ipv4,
-    	latitude,
-     	longitude
+    	latitude=latitude,
+     	longitude=longitude
 	)
 
 	# Extract Primary and Secondary VIPs
