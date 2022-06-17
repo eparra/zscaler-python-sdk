@@ -131,7 +131,7 @@ class Gre(object):
 
         #When using geoOverride you must pass the coordinates in order to get the proper lookups for the closest DC's
         if (latitude and longitude):
-            uri = '{}api/v1/vips/group:ByDatacenter?sourceIp={}&latitude={}&longitude={}'.format(
+            uri = '{}api/v1/vips/groupByDatacenter?sourceIp={}&latitude={}&longitude={}'.format(
                 self.api_url,
                 source_ip,
                 latitude,
