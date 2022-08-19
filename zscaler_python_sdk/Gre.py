@@ -32,30 +32,42 @@ class Gre(object):
         return res
 
         
-    def create_static_ip(self, static_ip, latitude, longitude):
+    def create_static_ip(self, static_ip, **data):
+        
+        latitude = data.get('latitude')
+        longitude = data.get('longitude')
+        geoOverride = data.get('geoOverride')
         
         uri = self.api_url + 'api/v1/staticIP'
     
         if not static_ip:
             if self.debug:
                 logging.error("ERROR: {}".format("No IP Address Provided"))
-            return 'No IP Address Provided'        
+                return 'No IP Address Provided'        
 
-        if not latitude:
-            if self.debug:
-                logging.error("ERROR: {}".format("No Latitude Provided"))
-            return 'No Latitude Provided'   
+        # To manually set geolocation of static IP the geoOverride parameter must be passed
+        # if not, then lat / long will be ignored.
+        if geoOverride == True:
+            if not latitude:
+                if self.debug:
+                    logging.error("ERROR: {}".format("No Latitude Provided"))
+                return 'No Latitude Provided'   
 
-        if not longitude:
-            if self.debug:
-                logging.error("ERROR: {}".format("No Longitude Provided"))
-            return 'No Longitude Provided'   
+            if not longitude:
+                if self.debug:
+                    logging.error("ERROR: {}".format("No Longitude Provided"))
+                return 'No Longitude Provided'   
     
-        body = {
-            'ipAddress' : static_ip,
-            'latitude'  : latitude, 
-            'longitude' : longitude
-        }
+            body = {
+                'ipAddress' : static_ip,
+                'latitude'  : latitude, 
+                'longitude' : longitude,
+                'geoOverride': geoOverride
+            }
+        else:
+            body = {
+                'ipAddress' : static_ip
+            }
 
         res = self._perform_post_request(
             uri,
@@ -107,12 +119,30 @@ class Gre(object):
         return res
 
 
-    def get_gre_vips(self, source_ip):
+    def get_gre_vips(self, source_ip, **data):
 
-        uri = '{}api/v1/vips/groupByDatacenter?sourceIp={}'.format(
-            self.api_url,
-            source_ip
-            )
+        latitude = data.get('latitude')
+        longitude = data.get('longitude')
+
+        if (latitude or longitude) and not (latitude and longitude):
+            if self.debug:
+                logging.error("ERROR: {}".format("Must include both Lat and Long for proximity lookup"))
+                return 'Must include both Lat and Long for proximity lookup'        
+
+        #When using geoOverride you must pass the coordinates in order to get the proper lookups for the closest DC's
+        if (latitude and longitude):
+            uri = '{}api/v1/vips/groupByDatacenter?sourceIp={}&latitude={}&longitude={}'.format(
+                self.api_url,
+                source_ip,
+                latitude,
+                longitude
+                )
+        
+        else:
+            uri = '{}api/v1/vips/groupByDatacenter?sourceIp={}'.format(
+                self.api_url,
+                source_ip
+                )
 
         res = self._perform_get_request(
             uri,

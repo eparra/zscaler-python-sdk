@@ -6,6 +6,9 @@ import zscaler_python_sdk
 def main():
 
 	static_ipv4       = 'X.X.X.X'  # Your public static IP address 
+	geoOverride       = True # If wanting to manually configure IP GeoLocation
+	latitude          = '47.608013'
+	longitude         = '-122.335167'
 	location_name     = 'sjc_sdwan_1 (San Jose, CA)'
 
 
@@ -19,7 +22,10 @@ def main():
 	# Create static IP address
 	print("\n\n ##########  CREATE STATIC IP ##########\n\n")
 	res = z.create_static_ip(
-		static_ipv4
+		static_ipv4,
+		latitude=latitude, 
+		longitude=longitude,
+  		geoOverride=geoOverride
 	)
 
 	# Extract Static IP ID. 
@@ -28,7 +34,11 @@ def main():
 
 	# Get closest DC VIPs by Source IP
 	print("\n\n ##########  GET GRE VIPS BY SOURCE IP  ##########\n\n")	
-	res = z.get_gre_vips(static_ipv4)
+	res = z.get_gre_vips(
+    	static_ipv4,
+    	latitude=latitude,
+     	longitude=longitude
+	)
 
 	# Extract Primary and Secondary VIPs
 	print("\n\n ##########  EXTRACTING PRIMARY VIP ID  ##########\n\n")
