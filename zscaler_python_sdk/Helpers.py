@@ -30,14 +30,23 @@ class Helpers(object):
 
     def extract_id_from_response(self, json_response):
 
-        try:
-            data = json.loads(json_response)
-            if self.debug:
-                logging.debug("Extractd ID: {}".format(data['id']))
-            return data['id']
-        except:
-            logging.debug("Unable To Extract ID - EXITING\n\n")        
-            exit()
+        if isinstance(json_response, dict):
+            try:
+                if self.debug:
+                    logging.debug("Extractd ID: {}".format(json_response['id']))
+                return json_response['id']
+            except:
+                logging.debug("Unable To Extract ID - EXITING\n\n")        
+                exit()
+        else:       
+            try:
+                data = json.loads(json_response)
+                if self.debug:
+                    logging.debug("Extractd ID: {}".format(data['id']))
+                return data['id']
+            except:
+                logging.debug("Unable To Extract ID - EXITING\n\n")        
+                exit()
 
 
     def extract_gre_vip_id_from_response(self, vip_priority, vips_data):

@@ -29,7 +29,7 @@ def main():
 	# Pass location name, VPN credential id, and FQDN
 	print("\n\n ##########  CREATE LOCATION  ##########\n\n")	
 	res = z.create_location_with_vpn_credential(
-		location_description,
+		location_name,
 		vpn_id,
 		fqdn
 	)	    

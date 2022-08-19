@@ -10,8 +10,11 @@ class Auth(object):
 		pass
 
 
-	def get_zia_creds_from_env(self, debug):			
-
+	def get_zia_creds_from_env(self, debug):
+		"""
+		Gets the  ZIA Credentials from the Shell Environmnnet.
+		Must pass True | False for Debug Logging.  Default = True
+    	"""
 		if debug:
 			self.debug = debug
 		else:
@@ -43,7 +46,10 @@ class Auth(object):
 
 
 	def get_zia_partner_creds_from_env(self, debug):			
-
+		"""
+		Gets the  Partner Credentials from the Shell Environmnnet.
+		Must pass True | False for Debug Logging.  Default = True
+    	"""
 		if debug:
 			self.debug = debug
 		else:
