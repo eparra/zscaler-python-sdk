@@ -5,9 +5,11 @@ import zscaler_python_sdk
 
 gateway_options = {
 	"authRequired" : True,
-	"sslScanEnabled" : True,
+	"surrogateIP" : True,
+	"displayTimeUnit": "HOUR",
+	"idleTimeInMinutes" : 480,
 	"surrogateIPEnforcedForKnownBrowsers" : True,
-	"surrogateRefreshTimeInMinutes" : 480,
+	"surrogateRefreshTimeInMinutes" : 240,
 	"surrogateRefreshTimeUnit" : "MINUTE",
 	"ofwEnabled" : True,
 	"ipsControl" : True,

@@ -5,7 +5,6 @@ import zscaler_python_sdk
 
 gateway_options = {
 	"authRequired" : True,
-	"sslScanEnabled" : True,
 	"xffForwardEnabled" : True,
 	"surrogateIPEnforcedForKnownBrowsers" : True,
 	"surrogateRefreshTimeInMinutes" : 480,
@@ -41,7 +40,7 @@ def main():
 	# Pass location name, VPN credential id, and FQDN
 	print("\n\n ##########  CREATE LOCATION  ##########\n\n")	
 	res = z.create_location_with_vpn_credential(
-		location_description,
+		location_name,
 		vpn_id,
 		fqdn,
 		gateway_options
