@@ -85,4 +85,8 @@ If you have bugs or other issues specifically pertaining to this library, file t
 
 ## References
 
-Thanks to [Sofian Halim](https://www.linkedin.com/in/sofian-halim-9237b25/) and [Lidor Pergament](https://www.linkedin.com/in/lidorp/).
+Thanks to:
+
+* [Sofian Halim](https://www.linkedin.com/in/sofian-halim-9237b25/)
+* [Lidor Pergament](https://www.linkedin.com/in/lidorp/)
+* [Paul Abbott](https://www.linkedin.com/in/paul-abbott-4b014/)
