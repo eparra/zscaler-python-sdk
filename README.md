@@ -76,7 +76,7 @@ If you have bugs or other issues specifically pertaining to this library, file t
 * https://help.zscaler.com/zia/zia-api/api-developer-reference-guide
 * https://help.zscaler.com/zia/sd-wan-api-integration
 
-## References
+## Acknowledgments
 
 Thanks to:
 
