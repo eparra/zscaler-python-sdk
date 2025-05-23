@@ -83,3 +83,17 @@ Thanks to:
 * [Sofian Halim](https://www.linkedin.com/in/sofian-halim-9237b25/)
 * [Lidor Pergament](https://www.linkedin.com/in/lidorp/)
 * [Paul Abbott](https://www.linkedin.com/in/paul-abbott-4b014/)
+
+## Async Client (v2)
+
+A new asynchronous client is provided under `zscaler_python_sdk.v2`. It uses `httpx` and dataclasses for configuration.
+
+Example:
+```python
+from zscaler_python_sdk.v2 import ZscalerConfig, ZscalerAsyncClient
+
+config = ZscalerConfig(username="user", password="pass", api_key="apikey")
+client = ZscalerAsyncClient(config)
+# await client.get("api/v1/some/resource")
+```
+
