@@ -102,7 +102,7 @@ class VpnCredentials(object):
 
 	def delete_vpn_credential_by_id(self, vpn_id):
 
-		uri = self.api_url + 'api/v1/vpnCredentials/' + vpn_id
+		uri = self.api_url + 'api/v1/vpnCredentials/' + str(vpn_id)
 
 		res = self._perform_delete_request(
 			uri,
