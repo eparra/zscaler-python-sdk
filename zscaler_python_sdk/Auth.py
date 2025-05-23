@@ -97,6 +97,6 @@ class Auth(object):
 			if self.debug:
 				logging.debug("CLOUD SET TO: {}".format(cloud))
 		else:
-			if self.debug:
-				logging.debug("CLOUD ERROD: {}".format("Unknwon Cloud"))				
-			return "Unknwon Cloud"		
+                        if self.debug:
+                                logging.debug("CLOUD ERROR: {}".format("Unknown Cloud"))
+                        return "Unknown Cloud"
