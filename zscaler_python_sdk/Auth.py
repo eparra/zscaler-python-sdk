@@ -99,4 +99,3 @@ class Auth(object):
 		else:
 			if self.debug:
 				logging.debug("CLOUD ERROR: {}".format("Unknown Cloud"))				
-			return "Unknown Cloud"		

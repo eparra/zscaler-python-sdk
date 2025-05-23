@@ -2,7 +2,7 @@
 
 This is a Python SDK for Zscaler Internet Access (ZIA).  This client library is designed to support the ZIA [API](https://help.zscaler.com/zia/zia-api) and ZIA [Partner API](https://help.zscaler.com/zia/sd-wan-api-integration) (aka "SD-WAN" API) in ZIA 6.1 or newer.  All ZIA API references can be found here [[LINK](https://help.zscaler.com/zia/zia-api)].  **PLEASE READ THE DOCUMENTATION BEFORE CONTACTING ZSCALER**
 
-This SDK has been developed mainly using Python 3.8.2 on macOS (10.15.7) and Ubuntu 18.04.1 LTS (Bionic Beaver).  
+This SDK has been tested with Python 3.13.3 and is compatible with Python 3.8 and newer.
 
 **NOTE:** This repository will experience frequent updates.  To minimize breakage, public method names will not change.  If you run into any defects, please open issues [[HERE.](https://github.com/eparra/zscaler-python-sdk/issues)]   
 
@@ -38,21 +38,14 @@ $ git clone https://github.com/eparra/zscaler-python-sdk.git
 $ cd zscaler-python-sdk/
 ```
 
-5) Install SDK requirements
+5) Install SDK
 
 ```
-$ pip3 install -r requirements.txt
+$ pip install .
 ...
 ```
 
-6) Install SDK
-
-```
-$ python3 setup.py install
-...
-```
-
-7) Check out examples
+6) Check out examples
 
 ```
 $ ls examples/
