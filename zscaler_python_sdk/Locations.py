@@ -168,8 +168,8 @@ class Locations(object):
 		if not location_id:
 			return "Location Required"
 
-                uri = self.api_url + 'api/v1/locations/' + str(location_id)
-
+		uri = self.api_url + 'api/v1/locations/' + str(location_id)
+    
 		res = self._perform_delete_request(
 			uri,
 			self._set_header(self.jsessionid)
