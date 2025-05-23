@@ -38,7 +38,7 @@ class Auth(object):
 		if os.environ.get('ZIA_API') is not None:
 			self.zia_api_key  = os.environ.get('ZIA_API')
 			if len(self.zia_api_key) < MIN_API_KEY_LENGTH:
-				logging.debug("ZIA API Key must be %{} characters".format(MIN_API_KEY_LENGTH))
+				logging.debug("ZIA API Key must be {} characters".format(MIN_API_KEY_LENGTH))
 				exit()
 		else:
 			logging.debug("ENV IMPORT ERROR: {}".format("ZIA_API not found"))
@@ -73,10 +73,10 @@ class Auth(object):
 		if os.environ.get('ZIA_PARTNER_API') is not None:
 			self.partner_api_key  = os.environ.get('ZIA_PARTNER_API')
 			if len(self.partner_api_key) < MIN_API_KEY_LENGTH:
-				logging.debug("Partner API Key must be %{} characters".format(MIN_API_KEY_LENGTH))
+				logging.debug("Partner API Key must be {} characters".format(MIN_API_KEY_LENGTH))
 				exit()
 		else:
-			logging.debug("ENV IMPORT ERROR: %{}".format("ZIA_PARTNER_API not found"))
+			logging.debug("ENV IMPORT ERROR: {}".format("ZIA_PARTNER_API not found"))
 			exit()
 
 
@@ -98,5 +98,5 @@ class Auth(object):
 				logging.debug("CLOUD SET TO: {}".format(cloud))
 		else:
 			if self.debug:
-				logging.debug("CLOUD ERROD: {}".format("Unknwon Cloud"))				
-			return "Unknwon Cloud"		
+				logging.debug("CLOUD ERROR: {}".format("Unknown Cloud"))				
+			return "Unknown Cloud"		
